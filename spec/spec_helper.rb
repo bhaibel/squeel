@@ -1,6 +1,7 @@
 require 'machinist/active_record'
 require 'sham'
 require 'faker'
+require 'pry'
 
 module ActiveRecord
   # Shamelessly swiped from the AR test code
