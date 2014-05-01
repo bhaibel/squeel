@@ -792,6 +792,7 @@ module Squeel
           it 'creates through a join model' do
             Article.transaction do
               article = Article.first
+              #binding.pry
               person = article.commenters.create(:name => 'Ernie Miller')
               person.should be_persisted
               person.comments.should have(1).comment

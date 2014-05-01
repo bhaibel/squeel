@@ -394,7 +394,7 @@ module Squeel
         # your model's default scope. We hijack it in order to dig down into
         # And and Grouping nodes, which are equivalent to seeing top-level
         # Equality nodes in stock AR terms.
-        def where_values_hash_with_squeel
+        def where_values_hash_with_squeel(relation_table_name = table_name)
           equalities = find_equality_predicates(where_visit(with_default_scope.where_values))
 
           binds = Hash[bind_values.find_all(&:first).map { |column, v| [column.name, v] }]
